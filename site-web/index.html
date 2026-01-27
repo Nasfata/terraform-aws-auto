@@ -2,41 +2,42 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mon Projet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <h1>Mon Projet Web</h1>
-    <p>Site statique simple en HTML et CSS</p>
+    <h1>Bienvenue sur mon site</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Projets</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#">Accueil</a>
-    <a href="#">À propos</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-  </nav>
+  <section class="hero">
+    <h2>Je suis Mohamed, passionné de Cloud & DevOps 🚀</h2>
+    <p>Découvrez mes projets et mes expériences.</p>
+    <a href="#" class="btn">Voir mes projets</a>
+  </section>
 
-  <section class="container">
+  <section class="projects">
+    <h2>Mes Projets</h2>
     <div class="card">
-      <h2>À propos</h2>
-      <p>Projet simple avec HTML et CSS.</p>
+      <h3>Déploiement AWS</h3>
+      <p>Infrastructure automatisée avec Terraform et GitHub Actions.</p>
     </div>
-
     <div class="card">
-      <h2>Services</h2>
-      <p>Création de sites simples.</p>
-    </div>
-
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Email : contact@monprojet.com</p>
+      <h3>Site Web S3</h3>
+      <p>Hébergement statique sur Amazon S3 avec CI/CD.</p>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 – Mon Projet</p>
+    <p>&copy; 2026 Mohamed - Tous droits réservés</p>
   </footer>
 </body>
 </html>
