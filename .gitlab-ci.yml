@@ -1,0 +1,13 @@
+image: hashicorp/terraform:latest
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - apk add --no-cache python3
+    - python generate_vars.py
+    - terraform init
+    - terraform plan
+    - terraform apply -auto-approve
