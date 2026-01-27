@@ -1,14 +1,27 @@
 image: hashicorp/terraform:latest
 
 stages:
-  - deploy
+  - validate
+  - plan
+  - apply
 
-deploy:
-  stage: deploy
+validate:
+  stage: validate
   script:
-    - apk add --no-cache python3
-    - python3 generate_vars.py
+    - terraform init
+    - terraform validate
+
+plan:
+  stage: plan
+  script:
+    - python generate_vars.py
     - terraform init
     - terraform plan -out=tfplan
-    - terraform show tfplan
+  artifacts:
+    paths:
+      - tfplan
 
+apply:
+  stage: apply
+  script:
+    - terraform apply -auto-approve tfplan
