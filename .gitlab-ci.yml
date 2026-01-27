@@ -10,4 +10,5 @@ deploy:
     - python3 generate_vars.py
     - terraform init
     - terraform plan -out=tfplan
-    - terraform apply -auto-approve tfplan
+    - terraform show tfplan
+
