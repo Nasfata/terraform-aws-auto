@@ -1,15 +1,25 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
+############################
+# IAM GROUP
+############################
+#resource "aws_iam_group" "dev_group" {
+  #name = "developers-group"
+#}
 
-provider "aws" {
-  region = var.aws_region
-}
+############################
+# IAM USER
+############################
+#resource "aws_iam_user" "dev_user" {
+  #name = "terraform-user"
+#}
+
+############################
+# GROUP MEMBERSHIP
+############################
+#resource "aws_iam_group_membership" "group_membership" {
+  #name  = "dev-group-membership"
+  #users = [aws_iam_user.dev_user.name]
+  #group = aws_iam_group.dev_group.name
+#}
 
 ############################
 # S3 BUCKET
@@ -85,3 +95,16 @@ resource "aws_s3_bucket_policy" "public_policy" {
     }]
   })
 }
+
+############################
+# OUTPUT
+############################
+output "website_url" {
+  value = "http://${aws_s3_bucket.website_bucket.bucket}.s3-website-${var.aws_region}.amazonaws.com"
+}
+
+
+#resource "aws_iam_group_policy_attachment" "s3_access" {
+#group      = aws_iam_group.dev_group.name
+  #policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+#}
