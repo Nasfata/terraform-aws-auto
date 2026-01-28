@@ -21,11 +21,21 @@
   #group = aws_iam_group.dev_group.name
 #}
 
+
 ############################
 # S3 BUCKET
 ############################
+#resource "aws_s3_bucket" "website_bucket" {
+  #bucket = var.bucket_name
+
+  #tags = {
+    #Environment = var.environment
+  #}
+#}`
+
+
 resource "aws_s3_bucket" "website_bucket" {
-  bucket = var.bucket_name
+  bucket = "mon-site-mohamed"
 
   tags = {
     Environment = var.environment
