@@ -104,7 +104,7 @@ output "website_url" {
 }
 
 
-#resource "aws_iam_group_policy_attachment" "s3_access" {
-  #group      = aws_iam_group.dev_group.name
-  #policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-#}
+resource "aws_iam_group_policy_attachment" "s3_access" {
+  group      = aws_iam_group.dev_group.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+}
