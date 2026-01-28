@@ -1,16 +1,16 @@
 ############################
 # IAM GROUP
 ############################
-resource "aws_iam_group" "dev_group" {
-  name = "developers-group"
-}
+#resource "aws_iam_group" "dev_group" {
+  #name = "developers-group"
+#}
 
 ############################
 # IAM USER
 ############################
-resource "aws_iam_user" "dev_user" {
-  name = "terraform-user"
-}
+#resource "aws_iam_user" "dev_user" {
+  #name = "terraform-user"
+#}
 
 ############################
 # GROUP MEMBERSHIP
@@ -104,7 +104,7 @@ output "website_url" {
 }
 
 
-resource "aws_iam_group_policy_attachment" "s3_access" {
-  group      = aws_iam_group.dev_group.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-}
+#resource "aws_iam_group_policy_attachment" "s3_access" {
+  #group      = aws_iam_group.dev_group.name
+  #policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+#}
